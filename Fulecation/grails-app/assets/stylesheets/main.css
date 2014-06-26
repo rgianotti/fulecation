@@ -121,6 +121,16 @@ img {
 	color: #255b17;
 }
 
+#login_out_bar {
+    height: 30px;
+    text-align: center;
+}
+
+#login_out_bar p {
+    padding-top: 3px;
+}
+
+
 .spinner {
 	background: url(../images/spinner.gif) 50% 50% no-repeat transparent;
 	height: 16px;

@@ -1,3 +1,5 @@
+import fulecation.User
+
 class BootStrap {
 
     def init = { servletContext ->
