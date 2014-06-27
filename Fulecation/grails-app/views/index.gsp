@@ -3,7 +3,7 @@
     <head>
         <meta name="layout" content="main"/>
         <title>Welcome to Grails</title>
-         <asset:stylesheet src="main_index.css"/>
+        <asset:stylesheet src="main_index.css"/>
     </head>
     <body>
         <div id="page-body" role="main">

@@ -1,6 +1,8 @@
 package fulecation
 
-class UserController {
+class UserController extends AuthController {
+    
+    def beforeInterceptor = [action:this.&checkUser,except: ['login','doLogin', 'create', 'doCreate']]
     
     def scaffold = true
 
@@ -8,7 +10,7 @@ class UserController {
     }
 
     def doLogin = {
-        def user = User.FindUser(params['useremail'], params['password'])
+        def user = User.FindUser(params['email'], params['password'])
         session.user = user
         if (user)
         {
@@ -44,4 +46,26 @@ class UserController {
             redirect(uri: "")
         }
     }
+    
+    def create = { 
+    }
+
+    def doCreate = {
+        if(params['password'] != params['confirmpassword'])
+        {
+            redirect(controller:'user',action:'create')
+        }
+        def user = User.AddNewUser(params['username'], params['email'], params['password'], params['bairro'], params['cidade'], params['estado'])
+        if(!user)
+        {
+             redirect(controller:'user',action:'create')
+        }
+        else {
+            redirect(uri:"")
+        }
+    }
+    
+    def info = { 
+    }
+
 }

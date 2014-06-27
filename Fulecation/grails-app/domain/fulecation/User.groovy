@@ -31,7 +31,8 @@ class User {
         byte[] passBytes = (password + "this_is_just_a_random_salt").getBytes();
         byte[] passHash = sha256.digest(passBytes);
         passHash.toString();
-        new User(email:email,password:Hex.encodeHexString( passHash ), username:username, bairro:bairro, cidade:cidade, estado:estado).save()
+        def u = new User(email:email,password:Hex.encodeHexString( passHash ), username:username, bairro:bairro, cidade:cidade, estado:estado)
+        u.save()
     }
     
     static FindUser(String email, String password)
