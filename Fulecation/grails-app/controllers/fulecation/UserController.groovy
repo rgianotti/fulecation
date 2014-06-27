@@ -10,14 +10,19 @@ class UserController extends AuthController {
     }
 
     def doLogin = {
+        //session = new HTTPSession
         def user = User.FindUser(params['email'], params['password'])
-        session.user = user
+        //session.invalidate()
+        //request.session
+        session.setAttribute("user", user)
+        //session.user = user
         if (user)
         {
             if(session.reduri)
             {
-                String reduri = session.reduri
-                session.reduri = null
+                String reduri = session.getAttribute("reduri")
+                session.setAttribute("reduri", null)
+                //session.reduri = null
                
                 redirect(uri: reduri)
             }
@@ -33,11 +38,17 @@ class UserController extends AuthController {
     }
     
     def logout = {
-        session.user = null
-        if(session.reduri)
+        //if(session.invalidated)
+        //{
+        //    redirect(uri: "")
+        //    return
+        //}
+        session.setAttribute("user", null)
+        //session.invalidate()
+        if(session.getAttribute("reduri"))
         {
-            String reduri = session.reduri
-            session.reduri = null
+            String reduri = session.getAttribute("reduri")
+            session.setAttribute("reduri", null)
                
             redirect(uri: reduri)
         }

@@ -15,14 +15,14 @@
                                 <label for='email'>Email:</label>
                             </td>
                             <td valign='top' style='text-align:left;' width='80%'>
-                                <input readonly="true" id="email" type='text' name='email' value='${session.user?.email}' /> </td>
+                                <input readonly="true" id="email" type='text' name='email' value='${session.getAttribute("user")?.email}' /> </td>
                         </tr>
                         <tr class='prop'>
                             <td valign='top' style='text-align:left;' width='20%'>
                                 <label for='username'>User Name:</label>
                             </td>
                             <td valign='top' style='text-align:left;' width='80%'>
-                                <input readonly="true"  id="username" type='text' name='username' value='${session.user?.username}' /> </td>
+                                <input readonly="true"  id="username" type='text' name='username' value='${session.getAttribute("user")?.username}' /> </td>
                         </tr>
                         <!--<tr class='prop'>
                             <td valign='top' style='text-align:left;' width='20%'>
@@ -45,21 +45,21 @@
                                 <label for='bairro'>Bairro:</label>
                             </td>
                             <td valign='top' style='text-align:left;' width='80%'>
-                                <input readonly="true"  id="bairro" type='text' name='bairro' value='${session.user?.bairro}' /> </td>
+                                <input readonly="true"  id="bairro" type='text' name='bairro' value='${session.getAttribute("user")?.bairro}' /> </td>
                         </tr>
                         <tr class='prop'>
                             <td valign='top' style='text-align:left;' width='20%'>
                                 <label for='cidade'>Cidade:</label>
                             </td>
                             <td valign='top' style='text-align:left;' width='80%'>
-                                <input readonly="true"  id="cidade" type='text' name='cidade' value='${session.user?.cidade}' /> </td>
+                                <input readonly="true"  id="cidade" type='text' name='cidade' value='${session.getAttribute("user")?.cidade}' /> </td>
                         </tr>
                         <tr class='prop'>
                             <td valign='top' style='text-align:left;' width='20%'>
                                 <label for='estado'>Estado:</label>
                             </td>
                             <td valign='top' style='text-align:left;' width='80%'>
-                                <input readonly="true"  id="estado" type='text' name='estado' value='${session.user?.estado}' /> </td>
+                                <input readonly="true"  id="estado" type='text' name='estado' value='${session.getAttribute("user")?.estado}' /> </td>
                         </tr>
 
                     </table> 

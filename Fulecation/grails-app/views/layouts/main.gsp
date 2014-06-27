@@ -19,8 +19,8 @@
 </head>
 <body>
     <div id="login_out_bar">
-        <g:if test="${session.user != null}">
-            <p>Welcome, <a href="${createLink(uri: '/user/info')}">${session.user.username}.</a> <a href="${createLink(uri: '/user/logout')}">Logout</a></p>
+        <g:if test="${session.getAttribute("user") != null}">
+            <p>Welcome, <a href="${createLink(uri: '/user/info')}">${session.getAttribute("user").username}.</a> <a href="${createLink(uri: '/user/logout')}">Logout</a></p>
         </g:if>
         <g:else>
                 <p>Welcome, Guest. <a href="${createLink(uri: '/user/login')}">Login</a></p>
