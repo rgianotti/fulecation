@@ -61,12 +61,20 @@
                             <td valign='top' style='text-align:left;' width='80%'>
                                 <input id="estado" type='text' name='estado' value='${user?.estado}' /> </td>
                         </tr>
+                        <tr class='prop'>
+                            <td valign='top' style='text-align:left;' width='20%'>
+                                <label for='onlyShiny'>Apenas Brilhantes:</label>
+                            </td>
+                            <td valign='top' style='text-align:left;' width='80%'>
+                                <g:checkBox id="onlyShiny" name="onlyShiny" value="${user?.onlyShiny}" />
+                            </td>
+                        </tr>
 
                     </table> 
                 </div>
                 <div class="buttons">
                     <span class="formButton">
-                        <input type="submit" value="Create"></input>
+                        <input type="submit" value="Criar"></input>
                     </span>
                 </div>
             </g:form>

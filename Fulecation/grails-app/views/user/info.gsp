@@ -62,6 +62,16 @@
                                 <input readonly="true"  id="estado" type='text' name='estado' value='${session.getAttribute("user")?.estado}' /> </td>
                         </tr>
 
+                        <tr class='prop'>
+                            <td valign='top' style='text-align:left;' width='20%'>
+                                <label for='onlyShiny'>Apenas Brilhantes:</label>
+                            </td>
+                            <td valign='top' style='text-align:left;' width='80%'>
+                                <g:checkBox onclick="return false"  id="onlyShiny" name="onlyShiny" value="${session.getAttribute("user")?.onlyShiny}" />
+                            </td>
+                            <!--<g:checkBox  readonly="true" id="onlyShiny" name='onlyShiny' value= '${session.getAttribute("user")?.onlyShiny} ? "true" : "false"' /> </td>-->
+                        </tr>
+
                     </table> 
                 </div>
                 <!--<div class="buttons">

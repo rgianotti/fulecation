@@ -15,6 +15,8 @@ class User {
     String cidade
     String estado
     
+    Boolean onlyShiny = false
+    
     static constraints =
     {
         username (nullable: false, blank: false, unique: true)
@@ -25,14 +27,14 @@ class User {
         estado (blank: true)
     }
     
-    static AddNewUser(String username, String  email, String password, String bairro, String cidade, String estado)
+    static AddNewUser(String username, String  email, String password, String bairro, String cidade, String estado, Boolean onlyShiny = false)
     {
         MessageDigest sha256 = MessageDigest.getInstance("SHA-256");        
         byte[] passBytes = (password + "this_is_just_a_random_salt").getBytes();
         byte[] passHash = sha256.digest(passBytes);
         passHash.toString();
-        def u = new User(email:email,password:Hex.encodeHexString( passHash ), username:username, bairro:bairro, cidade:cidade, estado:estado)
-        u.save()
+        def u = new User(email:email,password:Hex.encodeHexString( passHash ), username:username, bairro:bairro, cidade:cidade, estado:estado, onlyShiny: onlyShiny)
+        u.save flush:true
     }
     
     static FindUser(String email, String password)

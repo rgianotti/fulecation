@@ -156,7 +156,7 @@
 
     <session-config>
         <!-- 30 minutes -->
-        <session-timeout>2</session-timeout>
+        <session-timeout>15</session-timeout>
     </session-config>
 
     <welcome-file-list>

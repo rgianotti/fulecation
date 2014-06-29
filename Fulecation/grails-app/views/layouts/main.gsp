@@ -30,6 +30,10 @@
     <div class="nav" role="navigation">
         <ul>
             <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
+            <g:if test="${session.user != null}">
+                <li><a class="" href="${createLink(uri: '/user/info')}">Profile</a></li>
+                <li><a class="" href="${createLink(uri: '/hasSticker/manage')}">Figurinhas</a></li>
+            </g:if>
         </ul>
     </div>
     <g:layoutBody/>

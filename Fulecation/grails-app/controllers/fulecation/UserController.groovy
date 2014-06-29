@@ -4,7 +4,7 @@ class UserController extends AuthController {
     
     def beforeInterceptor = [action:this.&checkUser,except: ['login','doLogin', 'create', 'doCreate']]
     
-    def scaffold = true
+    //def scaffold = true
 
     def login = { 
     }
@@ -66,7 +66,7 @@ class UserController extends AuthController {
         {
             redirect(controller:'user',action:'create')
         }
-        def user = User.AddNewUser(params['username'], params['email'], params['password'], params['bairro'], params['cidade'], params['estado'])
+        def user = User.AddNewUser(params['username'], params['email'], params['password'], params['bairro'], params['cidade'], params['estado'], params['onlyShiny'] != null)
         if(!user)
         {
              redirect(controller:'user',action:'create')

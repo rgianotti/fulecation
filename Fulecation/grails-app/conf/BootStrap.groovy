@@ -3,7 +3,7 @@ import fulecation.User
 class BootStrap {
 
     def init = { servletContext ->
-        User.AddNewUser("Raphael", "a@a.com", "123456789", "test", "test", "test")
+        User.AddNewUser("Raphael", "a@a.com", "123456789", "test", "test", "test", true)
     }
     def destroy = {
     }
