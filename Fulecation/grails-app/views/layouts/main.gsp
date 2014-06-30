@@ -15,6 +15,7 @@
     <asset:stylesheet src="application.css"/>
     <asset:javascript src="application.js"/>
     <asset:stylesheet src="main_index.css"/>
+    <asset:stylesheet src="custom_styles.css"/>
     <g:layoutHead/>
 </head>
 <body>
@@ -26,7 +27,7 @@
                 <p>Bem Vindo, Visitante. <a href="${createLink(uri: '/user/login')}">Entrar</a></p>
         </g:else>
     </div>
-    <div id="banner" role="banner"><a href="http://grails.org"><asset:image src="banner.jpg" alt="Grails"/></a></div>
+    <div id="banner" role="banner"><a href="${createLink(uri: '/')}"><asset:image src="banner.jpg" alt="Grails"/></a></div>
     <div class="nav" role="navigation">
         <ul>
             <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
