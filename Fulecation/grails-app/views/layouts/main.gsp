@@ -26,14 +26,14 @@
                 <p>Bem Vindo, Visitante. <a href="${createLink(uri: '/user/login')}">Entrar</a></p>
         </g:else>
     </div>
-    <div id="grailsLogo" role="banner"><a href="http://grails.org"><asset:image src="grails_logo.png" alt="Grails"/></a></div>
+    <div id="banner" role="banner"><a href="http://grails.org"><asset:image src="banner.jpg" alt="Grails"/></a></div>
     <div class="nav" role="navigation">
         <ul>
             <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
             <g:if test="${session.user != null}">
                 <li><a class="" href="${createLink(uri: '/user/info')}">Profile</a></li>
                 <li><a class="" href="${createLink(uri: '/hasSticker/manage')}">Figurinhas</a></li>
-                <li><a class="" href="${createLink(uri: '/user/list')}">Procurar Usuários</a></li>
+                <li><a class="" href="${createLink(uri: '/user/list')}">Procurar Figurinhas</a></li>
             </g:if>
         </ul>
     </div>

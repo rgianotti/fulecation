@@ -17,30 +17,33 @@
                         {
                             def temp = "[collection: '" + Integer.toString(i) + "']";
                             %>
-                            <li><g:link action="manage" params="[collection: i]">${ HasSticker.album_sections[i] }</g:link></li>
+                            <li><g:link class="stickerNavButton" action="manage" params="[collection: i]">${ HasSticker.album_sections[i] }</g:link></li>
                             <%
                         }
                     %>
-                    <li><g:link action="manage" params="[collection: 0]">${ HasSticker.album_sections[0] }</g:link></li>
+                    <li><g:link class="stickerNavButton" action="manage" params="[collection: 0]">${ HasSticker.album_sections[0] }</g:link></li>
                     </ul>
             </div>
             
             <g:form url="[action:'doManage']">
                 <div class="dialog">
                 <!--<p>Enter your login details below:</p>-->
-                <table class="userForm">
+                <table class="userForm" id="stickersTable">
                 <thead>
-                    <tr>
-                        <td style='text-align:center;' width="25%">
+                    <tr class="stickerHead">
+                        <td width="30%">
+                            Figurinha
+                        </td>
+                        <td width="15%">
                             Code
                         </td>
-                        <td style='text-align:center;' width="25%">
+                        <td width="35%">
                             Name
                         </td>
-                        <td style='text-align:center;' width="25%">
+                        <td width="10%">
                             Tem Extras
                         </td>
-                        <td style='text-align:center;' width="25%">
+                        <td width="10%">
                             Brilhante
                         </td>
                     </tr>
@@ -68,18 +71,21 @@
                             hs = new HasSticker(onwer: session.user, stickerNumber: j, hasExtra: false, hasShiny: false)
                         session.stickers.add(hs)
                 %>
-                    <tr class='prop'>
-                            <td valign='top' style='text-align:center;' width="25%">
+                    <tr class="stickerLine">
+                            <td valign='top' width="30%">
+                                <asset:image src="${j}.jpg" alt="Grails"/>
+                            </td>
+                            <td  valign='top' width="15%">
                                 ${HasSticker.GetCode(j)}
                             </td>
-                            <td valign='top' style='text-align:center;' width="25%">
+                            <td valign='top'  width="35%">
                                 ${HasSticker.GetName(j)}
                             </td>
-                            <td valign='top' style='text-align:center;' width="25%">
-                                <g:checkBox name="hasExtra${hs?.stickerNumber}" value="${hs?.hasExtra}" />
+                            <td valign='top' width="10%">
+                                <g:checkBox name="hasExtra${hs?.stickerNumber}" value="${hs?.hasExtra}"/>
                             </td>
-                            <td valign='top' style='text-align:center;' width="25%">
-                                <g:checkBox name="hasShiny${hs?.stickerNumber}" value="${hs?.hasShiny}" />
+                            <td valign='top' width="10%">
+                                <g:checkBox name="hasShiny${hs?.stickerNumber}" value="${hs?.hasShiny}"/>
                             </td>
                     </tr>
                 <%

@@ -51,6 +51,17 @@ body {
 	background-color: #abbf78;
 }
 
+#banner
+{
+    background-color: #48802c;
+}
+
+#banner img
+{
+    margin: 5px 0;
+    min-width: 100%;
+}
+
 #filtros {
     height: 70px;
     width: 800px;
@@ -68,6 +79,82 @@ body {
 .filterCheckbox
 {
     margin: 0 18px;
+}
+
+.stickerNavButton
+{
+    width: 100px;
+    text-align: center;
+}
+
+#stickersTable
+{
+    margin: 15px auto;
+    width: 95%;
+}
+
+.stickerHead td
+{
+    text-align:center;
+    font-size:20px;
+    vertical-align: middle;
+    -moz-box-shadow: 0 0 3px 1px #aaaaaa;
+    -webkit-box-shadow: 0 0 3px 1px #aaaaaa;
+    box-shadow: 0 0 3px 1px #aaaaaa;
+}
+
+.stickerLine td
+{
+    text-align:center;
+    font-size:25px;
+    vertical-align: middle;
+    -moz-box-shadow: 0 0 3px 1px #aaaaaa;
+    -webkit-box-shadow: 0 0 3px 1px #aaaaaa;
+    box-shadow: 0 0 3px 1px #aaaaaa;
+}
+.stickerLine td input
+{
+    width: 25px;
+    height: 25px;
+    margin: 0 auto;
+}
+
+.stickerLine td img
+{
+    max-height: 200px;
+}
+
+#userList
+{
+    margin: 15px auto;
+    width: 95%;
+}
+
+.userListHead td
+{
+    text-align:center;
+    font-size:20px;
+    vertical-align: middle;
+    -moz-box-shadow: 0 0 3px 1px #aaaaaa;
+    -webkit-box-shadow: 0 0 3px 1px #aaaaaa;
+    box-shadow: 0 0 3px 1px #aaaaaa;
+}
+
+.userListLine td
+{
+    text-align:center;
+    font-size:20px;
+    vertical-align: middle;
+    -moz-box-shadow: 0 0 3px 1px #aaaaaa;
+    -webkit-box-shadow: 0 0 3px 1px #aaaaaa;
+    box-shadow: 0 0 3px 1px #aaaaaa;
+}
+
+.userListLine td a
+{
+    /*-moz-box-shadow: 0 0 3px 1px #aaaaaa;
+    -webkit-box-shadow: 0 0 3px 1px #aaaaaa;
+    box-shadow: 0 0 3px 1px #aaaaaa;*/
 }
 
 /* replace with .no-boxshadow body if you have modernizr available */
@@ -127,7 +214,7 @@ img {
 }
 
 .footer {
-	background: #abbf78;
+	background: #48802c;
 	color: #000;
 	clear: both;
 	font-size: 0.8em;
@@ -137,7 +224,7 @@ img {
 }
 
 .footer a {
-	color: #255b17;
+	color: #A6CC3B;
 }
 
 #login_out_bar {

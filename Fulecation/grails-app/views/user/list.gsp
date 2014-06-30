@@ -24,25 +24,25 @@
                 </div>
             </g:form>
             </div>
-            <table class="userForm">
+            <table class="userForm" id="userList">
             <thead>
-                <tr>
-                    <td style='text-align:center;' width="15%">
+                <tr class="userListHead">
+                    <td width="15%">
                         Usuário
                     </td>
-                    <td style='text-align:center;' width="20%">
+                    <td width="20%">
                         Cidade
                     </td>
-                    <td style='text-align:center;' width="15%">
+                    <td width="15%">
                         Estado
                     </td>
-                    <td style='text-align:center;' width="15%">
+                    <td width="15%">
                         Bairro
                     </td>
-                    <td style='text-align:center;' width="15%">
+                    <td width="15%">
                         Apenas Brilhantes
                     </td>
-                    <td style='text-align:center;' width="20%">
+                    <td width="20%">
                         Contato
                     </td>
                 </tr>
@@ -82,27 +82,32 @@
                         }
                     }
                     def contact = Contact.findWhere(userA: session.user, userB: list[i]);
-                    boolean isContact = contact && contact.approved
+                    //boolean isContact = contact && contact.approved
             %>
-                <tr>
-                    <td style='text-align:center;' width="15%">
+                <tr class="userListLine">
+                    <td width="15%">
                         ${list[i].username}
                     </td>
-                    <td style='text-align:center;' width="20%">
+                    <td width="20%">
                         ${list[i].cidade}
                     </td>
-                    <td style='text-align:center;' width="15%">
+                    <td width="15%">
                         ${list[i].estado}
                     </td>
-                    <td style='text-align:center;' width="15%">
+                    <td width="15%">
                         ${list[i].bairro}
                     </td>
-                    <td style='text-align:center;' width="15%">
+                    <td width="15%">
                         ${list[i].onlyShiny}
                     </td>
-                    <td style='text-align:center;' width="20%">
-                    <g:if test="${isContact == true}">
-                        ${list[i].email}
+                    <td width="20%">
+                    <g:if test="${contact != null}">
+                        <g:if test="${contact.approved}">
+                            ${list[i].email}
+                        </g:if>
+                        <g:else>
+                            Pendendo Aprovação
+                        </g:else>
                     </g:if>
                     <g:else>
                         <span class="buttons" id="filterButton">
