@@ -1,3 +1,14 @@
+.main_area
+{
+    text-align: center;
+}
+
+.userForm
+{
+    width: 50%;
+    margin: 0 auto;
+}
+
 #banner
 {
     background-color: #48802c;

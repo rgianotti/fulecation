@@ -7,4 +7,8 @@ class Contact {
     static constraints = {
         userA (unique: ['userB'])
     }
+    
+    def countPending(User user) {
+        return Contacts.findAllWhere(userB:user, approved:false);
+    }
 }

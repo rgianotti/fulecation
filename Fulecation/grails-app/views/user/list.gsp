@@ -30,14 +30,14 @@
                     <td width="15%">
                         Usuário
                     </td>
+                    <td width="15%">
+                        Bairro
+                    </td>
                     <td width="20%">
                         Cidade
                     </td>
                     <td width="15%">
                         Estado
-                    </td>
-                    <td width="15%">
-                        Bairro
                     </td>
                     <td width="15%">
                         Apenas Brilhantes
@@ -86,16 +86,16 @@
             %>
                 <tr class="userListLine">
                     <td width="15%">
-                        ${list[i].username}
+                         <g:link action="profile" controller="user" params="[user:list[i].username]">${list[i].username}</g:link>
+                    </td>
+                    <td width="15%">
+                        ${list[i].bairro}
                     </td>
                     <td width="20%">
                         ${list[i].cidade}
                     </td>
                     <td width="15%">
                         ${list[i].estado}
-                    </td>
-                    <td width="15%">
-                        ${list[i].bairro}
                     </td>
                     <td width="15%">
                         ${list[i].onlyShiny}
@@ -111,7 +111,7 @@
                     </g:if>
                     <g:else>
                         <span class="buttons" id="filterButton">
-                            <g:link action="doRequest" controller="user" params="[username:list[i].username]">Pedir</g:link>
+                            <g:link action="doRequest" controller="user" params="[user:list[i].username]">Pedir</g:link>
                         </span>
                     </g:else>
                     </td>

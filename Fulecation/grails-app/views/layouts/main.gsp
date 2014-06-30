@@ -1,3 +1,4 @@
+<%@page import="fulecation.*" %>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
 <!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
@@ -32,9 +33,16 @@
         <ul>
             <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
             <g:if test="${session.user != null}">
-                <li><a class="" href="${createLink(uri: '/user/info')}">Profile</a></li>
+                <li><a class="" href="${createLink(uri: '/user/profile')}">Profile</a></li>
                 <li><a class="" href="${createLink(uri: '/hasSticker/manage')}">Figurinhas</a></li>
                 <li><a class="" href="${createLink(uri: '/user/list')}">Procurar Figurinhas</a></li>
+                <% def count = session.user.pendingRequests%>
+                <g:if test="${count > 0}"> 
+                <li><a class="" href="${createLink(uri: '/user/contacts')}">Contatos <strong>+${count}</strong></a></li>
+                </g:if>
+                <g:else>
+                    <li><a class="" href="${createLink(uri: '/user/contacts')}">Contatos</a></li>
+                </g:else>
             </g:if>
         </ul>
     </div>

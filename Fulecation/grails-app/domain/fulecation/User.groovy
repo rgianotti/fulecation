@@ -14,6 +14,7 @@ class User {
     String bairro
     String cidade
     String estado
+    Long pendingRequests
     
     Boolean onlyShiny = false
     
@@ -33,7 +34,7 @@ class User {
         byte[] passBytes = (password + "this_is_just_a_random_salt").getBytes();
         byte[] passHash = sha256.digest(passBytes);
         passHash.toString();
-        def u = new User(email:email,password:Hex.encodeHexString( passHash ), username:username, bairro:bairro, cidade:cidade, estado:estado, onlyShiny: onlyShiny)
+        def u = new User(email:email,password:Hex.encodeHexString( passHash ), username:username, bairro:bairro, cidade:cidade, estado:estado, onlyShiny: onlyShiny, pendingRequests: 0)
         u.save flush:true
         
         return u

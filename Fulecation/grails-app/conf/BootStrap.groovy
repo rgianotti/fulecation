@@ -16,8 +16,11 @@ class BootStrap {
         HasSticker.AddOrUpdate(bob, true, true, 5)
         new Contact(userA: raphael, userB: john, approved: true).save()
         new Contact(userA: john, userB: raphael, approved: true).save()
-        new Contact(userA: raphael, userB: bob, approved: false).save()
+        new Contact(userA: raphael, userB: bob, approved: true).save()
         new Contact(userA: bob, userB: raphael, approved: false).save()
+        
+        raphael.pendingRequests = 1
+        raphael.save flush:true
     }
     def destroy = {
     }
