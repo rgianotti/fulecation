@@ -35,6 +35,8 @@ class User {
         passHash.toString();
         def u = new User(email:email,password:Hex.encodeHexString( passHash ), username:username, bairro:bairro, cidade:cidade, estado:estado, onlyShiny: onlyShiny)
         u.save flush:true
+        
+        return u
     }
     
     static FindUser(String email, String password)

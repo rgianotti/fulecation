@@ -51,6 +51,25 @@ body {
 	background-color: #abbf78;
 }
 
+#filtros {
+    height: 70px;
+    width: 800px;
+    margin: 20px 20px;
+}
+
+#filterButton
+{
+    background-color: transparent;
+    -moz-box-shadow: 0 0 3px 1px transparent;
+    -webkit-box-shadow: 0 0 3px 1px transparent;
+    box-shadow: 0 0 3px 1px transparent;
+}
+
+.filterCheckbox
+{
+    margin: 0 18px;
+}
+
 /* replace with .no-boxshadow body if you have modernizr available */
 .ie6 body,
 .ie7 body,

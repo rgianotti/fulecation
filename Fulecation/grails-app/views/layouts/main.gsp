@@ -20,10 +20,10 @@
 <body>
     <div id="login_out_bar">
         <g:if test="${session.getAttribute("user") != null}">
-            <p>Welcome, <a href="${createLink(uri: '/user/info')}">${session.getAttribute("user").username}.</a> <a href="${createLink(uri: '/user/logout')}">Logout</a></p>
+            <p>Bem Vindo, <a href="${createLink(uri: '/user/info')}">${session.getAttribute("user").username}.</a> <a href="${createLink(uri: '/user/logout')}">Sair</a></p>
         </g:if>
         <g:else>
-                <p>Welcome, Guest. <a href="${createLink(uri: '/user/login')}">Login</a></p>
+                <p>Bem Vindo, Visitante. <a href="${createLink(uri: '/user/login')}">Entrar</a></p>
         </g:else>
     </div>
     <div id="grailsLogo" role="banner"><a href="http://grails.org"><asset:image src="grails_logo.png" alt="Grails"/></a></div>
@@ -33,6 +33,7 @@
             <g:if test="${session.user != null}">
                 <li><a class="" href="${createLink(uri: '/user/info')}">Profile</a></li>
                 <li><a class="" href="${createLink(uri: '/hasSticker/manage')}">Figurinhas</a></li>
+                <li><a class="" href="${createLink(uri: '/user/list')}">Procurar Usuários</a></li>
             </g:if>
         </ul>
     </div>

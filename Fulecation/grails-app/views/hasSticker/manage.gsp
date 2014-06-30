@@ -83,23 +83,13 @@
                             </td>
                     </tr>
                 <%
-                        if(col == 0 && j == max - 1 && max < 640)
-                        {
-                            j = 640
-                            max = 649
-                        }
                     }
                 %>
                 </tbody>
                 </table> 
                 </div>
                 <div class="buttons">
-                    <%--<span class="formButton">
-                        <input type="submit" value="Atualizar"></input>
-                    </span>--%>
-                    <fieldset class="buttons">
-                            <g:submitButton name="atualizar" value="Atualizar" />
-                    </fieldset>
+                    <g:submitButton name="atualizar" value="Atualizar" />
                 </div>
             </g:form>
             </div>

@@ -12,8 +12,8 @@
 
             <div id="main_log_create" class="nav" role="navigation">
                 <ul>
-                    <li><a href="${createLink(uri: '/user/login')}"><g:message code="Login"/></a></li>
-                    <li><a href="${createLink(uri: '/user/create')}"><g:message code="Create Account"/></a></li>
+                    <li><a href="${createLink(uri: '/user/login')}"><g:message code="Entrar"/></a></li>
+                    <li><a href="${createLink(uri: '/user/create')}"><g:message code="Criar Conta"/></a></li>
                 </ul>
             </div>
         </div>

@@ -78,5 +78,7 @@ class UserController extends AuthController {
     
     def info = { 
     }
-
+    
+    def list = {
+    }
 }
