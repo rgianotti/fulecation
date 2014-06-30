@@ -122,7 +122,7 @@ class UserController extends AuthController {
                 session.user = session.user.merge()
                 session.user.save flush:true
                 
-                redirect(controller:'user', action:'list')
+                redirect(controller:'user', action:'contacts')
             }
         }
     }
@@ -155,7 +155,7 @@ class UserController extends AuthController {
                 else
                 {
                     contAB.approved = true;
-                    contBA.approved = true;
+                    //contBA.approved = true;
                     contAB.save flush:true
                     contBA.save flush:true
 
