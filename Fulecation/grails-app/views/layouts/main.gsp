@@ -34,7 +34,7 @@
 <body>
     <div id="login_out_bar">
         <g:if test="${session.getAttribute("user") != null}">
-            <p>Bem Vindo, <a href="${createLink(uri: '/user/info')}">${session.getAttribute("user").username}.</a> <a href="${createLink(uri: '/user/logout')}">Sair</a></p>
+            <p>Bem Vindo, <a href="${createLink(uri: '/user/profile')}">${session.getAttribute("user").username}.</a> <a href="${createLink(uri: '/user/logout')}">Sair</a></p>
         </g:if>
         <g:else>
                 <p>Bem Vindo, Visitante. <a href="${createLink(uri: '/user/login')}">Entrar</a></p>
