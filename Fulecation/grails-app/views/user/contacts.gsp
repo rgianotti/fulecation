@@ -18,15 +18,14 @@
                 <g:form action="contacts">
                 <div id="filtros">
                     <h2>Filtrar Por:</h2>
-                    <span class='filterCheckbox'>Brilhantes: <g:checkBox id="onlyShiny" name="onlyShiny" value="${params['onlyShiny']}" /></span>
                     <span class='filterCheckbox'>Bairro: <g:checkBox id="bairro" name="bairro" value="${params['bairro']}" /></span>
                     <span class='filterCheckbox'>Cidade: <g:checkBox id="cidade" name="cidade" value="${params['cidade']}" /></span>
                     <span class='filterCheckbox'>Estado: <g:checkBox id="estado" name="estado" value="${params['estado']}" /></span>
                     <div>
-                        <input style="margin-top:10px;margin-bottom:10px"  class = "btn btn-primary" type="submit" value="Filtrar"></input>
+                        <input style="margin-top:10px;"  class = "btn btn-primary" type="submit" value="Filtrar"></input>
                     </div>
                 </div>
-            </g:form>
+                </g:form>
             </div>
             <table class="userForm" id="userList">
             <thead>
