@@ -14,8 +14,8 @@
 <g:elseif test="${cont == null}">
     <div class="main_area">
         <h2>Usuário não é seu contato</h2>
-        <span class="buttons" id="filterButton">
-            <g:link action="doRequest" controller="user" params="[user:user.username]">Pedir Contato</g:link>
+        <span>
+            <g:link class = "btn btn-primary" action="doRequest" controller="user" params="[user:user.username]">Pedir Contato</g:link>
         </span>
     </div>
 </g:elseif>
@@ -25,9 +25,6 @@
     </div>
 </g:elseif>
 <g:else>
-<div class="buttons">
-    <g:link action="manage" controller="hasSticker" params="[user:user.username]">Figurinhas de ${user.username}</g:link>
-</div>
 <table class="userForm">
     <tr class='prop'>
         <td valign='top' style='text-align:left;' width='20%'>
@@ -92,5 +89,8 @@
     </tr>
 
 </table>
+<div class="main_area" style="margin-bottom:10px">
+    <g:link class = "btn btn-primary" action="manage" controller="hasSticker" params="[user:user.username]">Figurinhas de ${user.username}</g:link>
+</div>
 </g:else>
 

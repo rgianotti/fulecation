@@ -3,6 +3,12 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="layout" content="main" /> 
         <title>User Login</title>
+        <script type="text/javascript">
+        $(document).ready(function()
+        {
+            document.getElementById("profile").className += " active";
+        })
+        </script>
     </head>
     <body>
     <g:if test="${params['user'] == null || params['user'] == session.user.username}">

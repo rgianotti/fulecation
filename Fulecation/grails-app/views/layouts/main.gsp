@@ -45,11 +45,11 @@
     <div class="container">
       <div class="header">
         <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="${createLink(uri: '/')}">Principal</a></li>
-          <li><a href="${createLink(uri: '/hasSticker/manage')}">Figurinhas</a></li>
-          <li><a href="${createLink(uri: '/user/list')}">Procurar Figurinhas</a></li>
-          <li><a href="${createLink(uri: '/user/contacts')}">Contatos</a></li>
-          
+            <li id="main"><a href="${createLink(uri: '/')}">Principal</a></li>
+            <li id="profile"><a href="${createLink(uri: '/user/profile')}">Profile</a></li>
+            <li id="manage"><a href="${createLink(uri: '/hasSticker/manage')}">Figurinhas</a></li>
+            <li id="list"><a href="${createLink(uri: '/user/list')}">Procurar Figurinhas</a></li>
+            <li id="contacts"><a href="${createLink(uri: '/user/contacts')}">Contatos</a></li>
         </ul>
         <h3 class="text-muted">Fulecando</h3>
       </div>

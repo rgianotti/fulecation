@@ -5,6 +5,12 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="layout" content="main" /> 
         <title>User Login</title>
+        <script type="text/javascript">
+        $(document).ready(function()
+        {
+            document.getElementById("contacts").className += " active";
+        })
+        </script>
     </head>
     <body>
         <div class="body">
@@ -16,8 +22,8 @@
                     <span class='filterCheckbox'>Bairro: <g:checkBox id="bairro" name="bairro" value="${params['bairro']}" /></span>
                     <span class='filterCheckbox'>Cidade: <g:checkBox id="cidade" name="cidade" value="${params['cidade']}" /></span>
                     <span class='filterCheckbox'>Estado: <g:checkBox id="estado" name="estado" value="${params['estado']}" /></span>
-                    <div class="buttons" id="filterButton">
-                        <input type="submit" value="Filtrar"></input>
+                    <div>
+                        <input style="margin-top:10px;margin-bottom:10px"  class = "btn btn-primary" type="submit" value="Filtrar"></input>
                     </div>
                 </div>
             </g:form>
@@ -78,7 +84,7 @@
             %>
                 <tr class="userListLine">
                     <td width="15%">
-                         <g:link action="profile" controller="user" params="[user:list[i].username]">${list[i].username}</g:link>
+                         <g:link controller="user" params="[user:list[i].username]">${list[i].username}</g:link>
                     </td>
                     <td width="15%">
                         ${list[i].bairro}
@@ -96,15 +102,15 @@
                     <g:if test="${contact2.approved == true}">
                         <g:if test="${contact.approved == false}">
                             <p>Pendente</p>
-                            <g:link action="doDelete" controller="user" params="[user:list[i].username]">Cancelar</g:link>
+                            <g:link class = "btn btn-primary" action="doDelete" controller="user" params="[user:list[i].username]">Cancelar</g:link>
                         </g:if>
                         <g:else>
-                            <g:link action="doDelete" controller="user" params="[user:list[i].username]">Deletar</g:link>
+                            <g:link class = "btn btn-primary" action="doDelete" controller="user" params="[user:list[i].username]">Deletar</g:link>
                         </g:else>
                     </g:if>
                     <g:else>
-                        <span class="buttons" id="filterButton">
-                            <g:link action="doAccept" controller="user" params="[user:list[i].username]">Aprovar</g:link>
+                        <span>
+                            <g:link class = "btn btn-primary" action="doAccept" controller="user" params="[user:list[i].username]">Aprovar</g:link>
                         </span>
                     </g:else>
                     </td>

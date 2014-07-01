@@ -5,7 +5,7 @@
         <title>User Login</title>
     </head>
     <body>
-        <div class="jumbotron">
+        <div>
             <g:form action="doLogin" method="post">
                 <div class="dialog">
                     <!--<p>Enter your login details below:</p>-->
@@ -29,9 +29,9 @@
 
                     </table> 
                 </div>
-                <div class="buttons">
-                    <span class="formButton">
-                        <input type="submit" value="Login"></input>
+                <div>
+                    <span>
+                        <input class = "btn btn-primary center-block" type="submit" value="Login"></input>
                     </span>
                 </div>
             </g:form>

@@ -5,6 +5,12 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="layout" content="main" /> 
         <title>User Login</title>
+        <script type="text/javascript">
+        $(document).ready(function()
+        {
+            document.getElementById("manage").className += " active";
+        })
+        </script>
     </head>
     <body>
         <%
@@ -31,12 +37,12 @@
         <g:else>
             <div class="body">
                 <g:if test="${isLogedInUser == false}">
-                    <div class="buttons">
-                        <g:link action="profile" controller="user" params="[user:user.username]">Profile de ${user.username}</g:link>
-                        </div>
+                    <div style="margin-bottom: 10px">
+                        <g:link class = "btn btn-primary" action="profile" controller="user" params="[user:user.username]">Profile de ${user.username}</g:link>
+                    </div>
                 </g:if>
-                <div class="nav" role="navigation">
-                    <ul>
+                <div class="header" role="navigation">
+                    <ul class = "nav nav-pills pull-right">
                         <%
                             session.stickers = []
                             def i
@@ -44,11 +50,21 @@
                             {
                                 def temp = "[collection: '" + Integer.toString(i) + "']";
                         %>
-                            <li><g:link class="stickerNavButton" action="manage" params="[collection: i, user:user.username]">${ HasSticker.album_sections[i] }</g:link></li>
+                            <g:if test="${params['collection'] == Integer.toString(i)}"> 
+                                <li class="active"><g:link class="stickerNavButton" action="manage" params="[collection: i, user:user.username]">${ HasSticker.album_sections[i] }</g:link></li>
+                            </g:if>
+                            <g:else>
+                                <li><g:link class="stickerNavButton" action="manage" params="[collection: i, user:user.username]">${ HasSticker.album_sections[i] }</g:link></li>
+                            </g:else>
                         <%
                             }
                         %>
-                            <li><g:link class="stickerNavButton" action="manage" params="[collection: 0, user:user.username]">${ HasSticker.album_sections[0] }</g:link></li>
+                            <g:if test="${params['collection'] == null || params['collection'] == '0'}"> 
+                                <li class="active"><g:link class="stickerNavButton" action="manage" params="[collection: 0, user:user.username]">${ HasSticker.album_sections[0] }</g:link></li>
+                            </g:if>
+                            <g:else>
+                                <li><g:link class="stickerNavButton" action="manage" params="[collection: 0, user:user.username]">${ HasSticker.album_sections[0] }</g:link></li>
+                            </g:else>
                     </ul>
                 </div>
 
@@ -132,8 +148,8 @@
                         </table> 
                     </div>
                     <g:if test="${isLogedInUser == true}">
-                        <div class="buttons">
-                            <g:submitButton name="atualizar" value="Atualizar" />
+                        <div>
+                            <g:submitButton  class = "btn btn-primary" name="atualizar" value="Atualizar" />
                         </div>
                     </g:if>
                 </g:form>

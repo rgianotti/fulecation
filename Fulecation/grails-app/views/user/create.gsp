@@ -72,9 +72,9 @@
 
                     </table> 
                 </div>
-                <div class="buttons">
-                    <span class="formButton">
-                        <input type="submit" value="Criar"></input>
+                <div>
+                    <span>
+                        <input class = "btn btn-primary center-block" type="submit" value="Criar"></input>
                     </span>
                 </div>
             </g:form>

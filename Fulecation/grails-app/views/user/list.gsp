@@ -5,6 +5,12 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="layout" content="main" /> 
         <title>User Login</title>
+        <script type="text/javascript">
+        $(document).ready(function()
+        {
+            document.getElementById("list").className += " active";
+        })
+        </script>
     </head>
     <body>
         <div class="body">
@@ -18,8 +24,8 @@
                     <span class='filterCheckbox'>Estado: <g:checkBox id="estado" name="estado" value="${params['estado']}" /></span>
                     <% if(!params['figurinha']) { params['figurinha'] = '0' } %>
                     <span class='filterCheckbox'>Figurinha: <input type="number" id="figurinha" name="figurinha" value="${(params['figurinha'])}" min="0" max="639"/></span>
-                    <div class="buttons" id="filterButton">
-                        <input type="submit" value="Filtrar"></input>
+                    <div>
+                        <input style="margin-top:10px;margin-bottom:10px" class = "btn btn-primary" type="submit" value="Filtrar"></input>
                     </div>
                 </div>
             </g:form>
@@ -110,8 +116,8 @@
                         </g:else>
                     </g:if>
                     <g:else>
-                        <span class="buttons" id="filterButton">
-                            <g:link action="doRequest" controller="user" params="[user:list[i].username]">Pedir</g:link>
+                        <span>
+                                <g:link class = "btn btn-primary" action="doRequest" controller="user" params="[user:list[i].username]">Pedir</g:link>
                         </span>
                     </g:else>
                     </td>

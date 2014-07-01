@@ -115,3 +115,14 @@
     -webkit-box-shadow: 0 0 3px 1px #aaaaaa;
     box-shadow: 0 0 3px 1px #aaaaaa;*/
 }
+
+.mybutton a
+{
+    text-decoration: none;
+}
+
+.mybutton a:active
+{
+    text-decoration: none;
+    color: white;
+}
