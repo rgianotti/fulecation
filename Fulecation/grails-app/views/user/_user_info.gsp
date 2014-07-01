@@ -25,6 +25,9 @@
     </div>
 </g:elseif>
 <g:else>
+<div class="main_area" style="margin-bottom:10px">
+    <g:link class = "btn btn-primary" action="manage" controller="hasSticker" params="[user:user.username]">Figurinhas de ${user.username}</g:link>
+</div>
 <table class="userForm">
     <tr class='prop'>
         <td valign='top' style='text-align:left;' width='20%'>
@@ -89,8 +92,5 @@
     </tr>
 
 </table>
-<div class="main_area" style="margin-bottom:10px">
-    <g:link class = "btn btn-primary" action="manage" controller="hasSticker" params="[user:user.username]">Figurinhas de ${user.username}</g:link>
-</div>
 </g:else>
 
