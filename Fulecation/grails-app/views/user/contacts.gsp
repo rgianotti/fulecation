@@ -101,10 +101,10 @@
                     <g:if test="${contact2.approved == true}">
                         <g:if test="${contact.approved == false}">
                             <p>Pendente</p>
-                            <g:link class = "btn btn-primary" action="doDelete" controller="user" params="[user:list[i].username]">Cancelar</g:link>
+                            <g:link class = "btn btn-primary btn-danger" action="doDelete" controller="user" params="[user:list[i].username]">Cancelar</g:link>
                         </g:if>
                         <g:else>
-                            <g:link class = "btn btn-primary" action="doDelete" controller="user" params="[user:list[i].username]">Deletar</g:link>
+                            <g:link class = "btn btn-primary btn-danger" action="doDelete" controller="user" params="[user:list[i].username]">Deletar</g:link>
                         </g:else>
                     </g:if>
                     <g:else>

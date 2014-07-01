@@ -44,7 +44,7 @@
     
     <div class="container">
       <div class="header">
-        <ul class="nav nav-pills pull-right">
+        <ul class="nav nav-pills center-block">
             <li id="main"><a href="${createLink(uri: '/')}">Principal</a></li>
             <li id="profile"><a href="${createLink(uri: '/user/profile')}">Profile</a></li>
             <li id="manage"><a href="${createLink(uri: '/hasSticker/manage')}">Figurinhas</a></li>
@@ -56,7 +56,6 @@
                 <li id="contacts"><a href="${createLink(uri: '/user/contacts')}">Contatos +${session.getAttribute("user").pendingRequests}</a></li>
             </g:else>
         </ul>
-        <h3 class="text-muted">Fulecando</h3>
       </div>
     
         
