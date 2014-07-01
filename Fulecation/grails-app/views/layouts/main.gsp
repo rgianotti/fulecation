@@ -49,7 +49,12 @@
             <li id="profile"><a href="${createLink(uri: '/user/profile')}">Profile</a></li>
             <li id="manage"><a href="${createLink(uri: '/hasSticker/manage')}">Figurinhas</a></li>
             <li id="list"><a href="${createLink(uri: '/user/list')}">Procurar Figurinhas</a></li>
-            <li id="contacts"><a href="${createLink(uri: '/user/contacts')}">Contatos</a></li>
+            <g:if test="${session.getAttribute("user") == null || session.getAttribute("user").pendingRequests == 0}">
+                <li id="contacts"><a href="${createLink(uri: '/user/contacts')}">Contatos</a></li>
+            </g:if>
+            <g:else>
+                <li id="contacts"><a href="${createLink(uri: '/user/contacts')}">Contatos +${session.getAttribute("user").pendingRequests}</a></li>
+            </g:else>
         </ul>
         <h3 class="text-muted">Fulecando</h3>
       </div>

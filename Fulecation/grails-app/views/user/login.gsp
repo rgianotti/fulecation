@@ -6,6 +6,11 @@
     </head>
     <body>
         <div>
+            <g:if test="${params['error'] != null}">
+                <div class="text-center text-danger">
+                    <span>${params['error']}</span>
+                </div>
+            </g:if>
             <g:form action="doLogin" method="post">
                 <div class="dialog">
                     <!--<p>Enter your login details below:</p>-->

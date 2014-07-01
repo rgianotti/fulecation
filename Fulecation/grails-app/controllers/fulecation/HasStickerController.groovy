@@ -3,7 +3,6 @@ package fulecation
 class HasStickerController extends AuthController{
 
     
-    static scaffold = true
     def manage = {
     }
     

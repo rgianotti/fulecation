@@ -2,7 +2,7 @@ package fulecation
 
 class UserController extends AuthController {
     
-    def beforeInterceptor = [action:this.&checkUser,except: ['login','doLogin', 'create', 'doCreate']]
+    def beforeInterceptor = [action:this.&checkUser,except: ['login','doLogin', 'create', 'doCreate', 'confirm_created']]
     
     //def scaffold = true
 
@@ -33,7 +33,7 @@ class UserController extends AuthController {
         }
         else
         {
-            redirect(controller:'user',action:'login')
+            redirect(controller:'user',action:'login', params:[error:'E-mail e/ou senha errados.'])
         }
     }
     
@@ -64,15 +64,17 @@ class UserController extends AuthController {
     def doCreate = {
         if(params['password'] != params['confirmpassword'])
         {
-            redirect(controller:'user',action:'create')
         }
-        def user = User.AddNewUser(params['username'], params['email'], params['password'], params['bairro'], params['cidade'], params['estado'], params['onlyShiny'] != null)
-        if(!user)
+        else 
         {
-             redirect(controller:'user',action:'create')
-        }
-        else {
-            redirect(uri:"")
+            def user = User.AddNewUser(params['username'], params['email'], params['password'], params['bairro'], params['cidade'], params['estado'], params['onlyShiny'] != null)
+            if(!user || user.hasErrors())
+            {
+                 redirect(controller:'user',action:'create', params:[error:'Falha ao tentar cadastrar o usuário, o nome ou e-mail podem já estar em uso.'])
+            }
+            else {
+                redirect(controller:'user',action:'confirm_created', params:[user:params['username']])
+            }
         }
     }
     
@@ -208,5 +210,9 @@ class UserController extends AuthController {
                 }
             }
         }
+    }
+    
+    def confirm_created = {
+        
     }
 }

@@ -83,7 +83,7 @@
             %>
                 <tr class="userListLine">
                     <td width="15%">
-                         <g:link controller="user" params="[user:list[i].username]">${list[i].username}</g:link>
+                         <g:link controller="user" action="profile" params="[user:list[i].username]">${list[i].username}</g:link>
                     </td>
                     <td width="15%">
                         ${list[i].bairro}
