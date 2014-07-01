@@ -1,21 +1,32 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta name="layout" content="main"/>
-        <title>Welcome to Grails</title>
-        <asset:stylesheet src="main_index.css"/>
-    </head>
-    <body>
-        <div id="page-body" role="main">
-            <h1>Bem vindo ao Fulecando</h1>
-            <p>Seu ponto virtual de troca de figurinhas</p>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="layout" content="main" /> 
 
-            <div id="main_log_create" class="nav" role="navigation">
-                <ul>
-                    <li><a href="${createLink(uri: '/user/login')}"><g:message code="Entrar"/></a></li>
-                    <li><a href="${createLink(uri: '/user/create')}"><g:message code="Criar Conta"/></a></li>
-                </ul>
-            </div>
-        </div>
-    </body>
+    <title>Fulecando</title>
+  </head>
+
+  <body>
+
+      <div class="jumbotron">
+        <h1>Bem vindo ao Fulecando</h1>
+            <p>Seu ponto virtual de troca de figurinhas</p>
+                    <a class="btn btn-lg btn-success" href="${createLink(uri: '/user/login')}"><g:message code="Entrar"/></a>
+                    <br><br>
+                    <a class="btn btn-lg btn-success" href="${createLink(uri: '/user/create')}"><g:message code="Criar Conta"/></a>
+ 
+      </div>
+
+      <div class="footer">
+        <p>&copy; UFSCar 2014</p>
+      </div>
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  </body>
 </html>

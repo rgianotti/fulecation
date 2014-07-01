@@ -5,7 +5,7 @@
         <title>User Login</title>
     </head>
     <body>
-        <div class="body">
+        <div class="jumbotron">
             <g:form action="doLogin" method="post">
                 <div class="dialog">
                     <!--<p>Enter your login details below:</p>-->
